@@ -2,9 +2,11 @@
 
 **Project Overview**
 
-In this project, we will explore Gauss’s method in the context of solving linear systems numerically, with a particular focus on error propagation phenomena. We will investigate how different pivoting strategies and preconditioning techniques can affect the accuracy of results, and use modern diagnostic tools such as the GDB debugger to analyze code-level errors. Our aim is to combine a deep historical and theoretical understanding with practical programming skills to enhance the reliability of scientific computations.
+In this project, we explore the solution of linear equation systems using Gauss’s method, a fundamental technique in linear algebra for solving matrix systems. This method is not only crucial for understanding the principles of linear algebra but also serves as the basis for many applications in science and engineering. Specifically, we focus on the LU decomposition of the matrix during the triangulation step, allowing the transformation of the initial system into a simpler format for solving.
 
-**Objectives**
+**Objective**
+
+Gauss’s method, also known as Gaussian elimination, is often chosen for its robustness and efficiency in handling large systems. However, despite its advantages, the method is not without potential errors, particularly regarding computational errors due to the limitations of computer precision. These errors can significantly affect the reliability of the solutions obtained, especially when numerical stability is compromised by ill-conditioned matrices or arithmetic operations prone to introducing significant rounding errors.
 
 	•	Understand the numerical resolution of linear systems using Gauss’s method.
 	•	Analyze error propagation in the context of linear systems.
@@ -12,13 +14,14 @@ In this project, we will explore Gauss’s method in the context of solving line
 	•	Use modern debugging tools (GDB) to diagnose and correct coding errors.
 	•	Strengthen practical programming skills to improve the reliability of scientific computations.
 
-**Tools and Technologies**
+**Implementation in C**
 
-	•	Gauss’s method: For solving linear systems.
-	•	Pivoting strategies: To improve numerical stability.
-	•	Preconditioning techniques: For enhanced accuracy.
-	•	GDB debugger: To analyze and correct errors in the code.
+To address these issues, we have chosen to code this method in the C programming language, a decision motivated by the performance and low-level control it offers, allowing for precise analysis of matrix operations. A key part of our study focuses on observing local errors that appear during the calculation of each term in the matrix transformed by Gauss’s method. The analysis of these errors is performed independently for each matrix element, helping us isolate and understand the specific errors introduced during calculations.
 
-**Expected Outcomes**
+**Debugging and Error Analysis**
 
-By the end of the project, we expect to have a deeper understanding of both the theoretical and practical aspects of Gauss’s method, as well as enhanced skills in diagnosing and correcting computational errors, leading to more reliable scientific calculations.
+To examine these errors in greater detail, we utilize GDB, the GNU Debugger. GDB allows us to not only step through the program execution but also inspect the state of variables and memory at any point in the calculation process. This capability is indispensable for pinpointing where and why numerical errors occur. By understanding these dynamics, we can consider algorithmic improvements or data handling adjustments that reduce the impact of these errors on the final results.
+
+**Conclusion**
+
+Through this project, we aim to gain a deeper understanding of both the theoretical and practical aspects of Gauss’s method, improve our error analysis techniques, and enhance the reliability of numerical solutions in scientific computing.
