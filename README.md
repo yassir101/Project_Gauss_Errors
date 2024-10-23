@@ -1,4 +1,4 @@
-# Project_Gauss_Errors
+# Project Gauss Errors
 
 **Project Overview**
 
