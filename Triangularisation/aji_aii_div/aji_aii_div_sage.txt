@@ -1,0 +1,128 @@
+︠7afeda9d-bf9b-494a-9bff-8bd94723a05a︠
+import struct
+
+# Fonction pour convertir un flottant en sa représentation binaire IEEE 754
+def float_to_bin(num):
+    """ Convert a float to its binary representation according to IEEE 754. """
+    # Pack the float into 8 bytes and convert to a binary string
+    return ''.join(f'{c:08b}' for c in struct.pack('!d', num))
+
+# valeurs
+a11 = 10.00000000000000000000
+a21 = 7.000000000000000000000
+a31 = 8.000000000000000000000
+a41 = 7.000000000000000000000
+
+l21 = 0.699999999999999955591
+l31 = 0.800000000000000044409
+l41 = 0.699999999999999955591
+
+a22 = 0.100000000000000532907
+a32 = 0.399999999999999467093
+a42 = 0.100000000000000532907
+
+l32 = 3.999999999999973354647
+l42 = 1.000000000000000000000
+
+a33 = 2.000000000000008881784
+a43 = 3.000000000000000000000
+
+l43 = 1.499999999999993338662
+
+print(f"Valeur décimale de A[1][1]: {a11:.21f}")
+print(f"Représentation binaire de A[1][1]: {float_to_bin(a11)} \n")
+print(f"Valeur décimale de A[2][1]: {a21:.21f}")
+print(f"Représentation binaire de A[2][1]: {float_to_bin(a21)} \n")
+print(f"Calcul exact de A[2][1]/A[1][1] : {a21/a11:.21f}")
+print(f"Représentation binaire du calcul exact: {float_to_bin(a21/a11)} \n")
+print(f"Valeur décimale de A[2][1]/A[1][1] avec gdb: {l21:.21f}")
+print(f"Représentation binaire de A[2][1]/A[1][1] avec gdb: {float_to_bin(l21)} \n")
+
+err_abs = abs(l21 - a21/a11)
+err_rel = err_abs/(a21/a11)
+print(f"Erreur absolue de A[2][1]/A[1][1] : {err_abs}")
+print(f"Erreur relative de A[2][1]/A[1][1]: {err_rel}")
+
+################################################################################
+
+print(f"Valeur décimale de A[1][1]: {a11:.21f}")
+print(f"Représentation binaire de A[1][1]: {float_to_bin(a11)} \n")
+print(f"Valeur décimale de A[3][1]: {a31:.21f}")
+print(f"Représentation binaire de A[3][1]: {float_to_bin(a31)} \n")
+print(f"Calcul exact de A[3][1]/A[1][1] : {a31/a11:.21f}")
+print(f"Représentation binaire du calcul exact: {float_to_bin(a31/a11)}\n")
+print(f"Valeur décimale de A[3][1]/A[1][1] avec gdb: {l31:.21f}")
+print(f"Représentation binaire de A[3][1]/A[1][1] avec gdb: {float_to_bin(l31)}\n")
+
+err_abs = abs(l31 - a31/a11)
+err_rel = err_abs/(a31/a11)
+print(f"Erreur absolue de A[3][1]/A[1][1]: {err_abs}")
+print(f"Erreur relative de A[3][1]/A[1][1]: {err_rel}")
+
+################################################################################
+
+print(f"Valeur décimale de A[1][1]: {a11:.21f}")
+print(f"Représentation binaire de A[1][1]: {float_to_bin(a11)} \n")
+print(f"Valeur décimale de A[4][1]: {a41:.21f}")
+print(f"Représentation binaire de A[4][1]: {float_to_bin(a41)} \n")
+print(f"Calcul exact de A[4][1]/A[1][1] : {a41/a11:.21f}")
+print(f"Représentation binaire du calcul exact: {float_to_bin(a41/a11)}\n")
+print(f"Valeur décimale de A[4][1]/A[1][1] avec gdb: {l41:.21f}")
+print(f"Représentation binaire de A[4][1]/A[1][1] avec gdb: {float_to_bin(l41)}\n")
+
+err_abs = abs(l41 - a41/a11)
+err_rel = err_abs/(a41/a11)
+
+print(f"Erreur absolue de A[4][1]/A[1][1]: {err_abs}")
+print(f"Erreur relative de A[4][1]/A[1][1]: {err_rel}")
+
+################################################################################
+
+print(f"Valeur décimale de A[2][2]: {a22:.21f}")
+print(f"Représentation binaire de A[2][2]: {float_to_bin(a22)} \n")
+print(f"Valeur décimale de A[3][2]: {a32:.21f}")
+print(f"Représentation binaire de A[3][2]: {float_to_bin(a32)} \n")
+print(f"Calcul exact de A[3][2]/A[2][2] : {a32/a22:.21f}")
+print(f"Représentation binaire du calcul exact: {float_to_bin(a32/a22)}\n")
+print(f"Valeur décimale de A[3][2]/A[2][2] avec gdb: {l32:.21f}")
+print(f"Représentation binaire de A[3][2]/A[2][2] avec gdb: {float_to_bin(l32)}\n")
+
+err_abs = abs(l32 - a32/a22)
+err_rel = err_abs/(a32/a22)
+
+print(f"Erreur absolue de A[3][2]]/A[2][2]: {err_abs}")
+print(f"Erreur relative de A[3][2]/A[2][2]: {err_rel}")
+
+################################################################################
+
+print(f"Valeur décimale de A[2][2]: {a22:.21f}")
+print(f"Représentation binaire de A[2][2]: {float_to_bin(a22)} \n")
+print(f"Valeur décimale de A[4][2]: {a42:.21f}")
+print(f"Représentation binaire de A[4][2]: {float_to_bin(a42)} \n")
+print(f"Calcul exact de A[4][2]/A[2][2] : {a42/a22:.21f}")
+print(f"Représentation binaire du calcul exact: {float_to_bin(a42/a22)}\n")
+print(f"Valeur décimale de A[4][2]/A[2][2] avec gdb: {l42:.21f}")
+print(f"Représentation binaire de A[4][2]/A[2][2] avec gdb: {float_to_bin(l42)}\n")
+
+err_abs = abs(l42 - a42/a22)
+err_rel = err_abs/(a42/a22)
+
+print(f"Erreur absolue de A[4][2]]/A[2][2]: {err_abs}")
+print(f"Erreur relative de A[4][2]/A[2][2]: {err_rel}")
+
+################################################################################
+
+print(f"Valeur décimale de A[3][3]: {a33:.21f}")
+print(f"Représentation binaire de A[3][3]: {float_to_bin(a33)} \n")
+print(f"Valeur décimale de A[4][3]: {a43:.21f}")
+print(f"Représentation binaire de A[4][3]: {float_to_bin(a43)} \n")
+print(f"Calcul exact de A[4][3]/A[3][3] : {a43/a33:.21f}")
+print(f"Représentation binaire du calcul exact: {float_to_bin(a43/a33)}\n")
+print(f"Valeur décimale de A[4][3]/A[3][3] avec gdb: {l43:.21f}")
+print(f"Représentation binaire de A[4][3]/A[3][3] avec gdb: {float_to_bin(l43)}\n")
+
+err_abs = abs(l43 - (a43/a33))
+err_rel = err_abs / (a43/a33)
+
+print(f"Erreur absolue de A[4][3]/A[3][3]: {err_abs}")
+print(f"Erreur relative de A[4][3]/A[3][3]: {err_rel}")
