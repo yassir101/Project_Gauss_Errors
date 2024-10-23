@@ -1,4 +1,4 @@
-# Project_MMSN_Gauss_Errors
+# Project_Gauss_Errors
 
 **Project Overview**
 
